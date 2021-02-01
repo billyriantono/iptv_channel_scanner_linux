@@ -62,7 +62,7 @@ int iptvscan(unsigned int ip)
     pcap_compile(device, &filter, strfilter, 1, 0);
     pcap_setfilter(device, &filter);
 
-    usleep(150000);
+    sleep(1);
     struct pcap_pkthdr packet;
     const u_char *pktStr = pcap_next(device, &packet);
     if (pktStr)
